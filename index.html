@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mileage Predictor Proposal</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Mileage Predictor Proposal">
+  <meta name="author" content="ldmacdonald">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Mileage Predictor Proposal</h1>
+    <h2></h2>
+    <p>ldmacdonald<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>What am I selling?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h1>An application that will predict whether or not a user has enough gas in their car for a current trip.</h1>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Why?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Planning: The user needs to know how much gas they&#39;ll need for a trip.</li>
+<li>Savings: The user can save money by filling up when they have a good price since they will know how much gas they will need.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>How is the app making this prediction?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Currently, we are making  a few assumptions.  Most cars built in America are designed with a 300 mile range.  We take the percentage of the gas remaining in the tank and do some basic calculations.  The current calculation is shown below.</p>
+
+<pre><code class="r">    dist &lt;- 10 # This is set by the mileage control
+    gas &lt;- 1/4 *(300) # This is set by the gas Remaining control
+    gasUsed &lt;- dist/12.5 # this will be set by the car type input.
+
+    if(dist &lt;= gas) {
+      out &lt;- paste(&#39;Yes, you have enough gas.  You will use &#39;,gasUsed,&#39; gallons of gas.&#39;)
+    } else { out &lt;- &#39;No, you do not have enough gas.&#39;}
+    out
+</code></pre>
+
+<pre><code>## [1] &quot;Yes, you have enough gas.  You will use  0.8  gallons of gas.&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Next Steps</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Pull in more accurate car data.<br>
+
+<ul>
+<li>We can make more accurate predictions about the car&#39;s range</li>
+<li>Allows a level of customization per user</li>
+</ul></li>
+<li>Integrate gas station prices
+
+<ul>
+<li>Allows app to suggest locations that offer the best price for gas in the range</li>
+</ul></li>
+<li>Integrate address/ direction functionality
+
+<ul>
+<li>Suggest pathing with the best prices for gas based upon the destination.</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='What am I selling?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Why?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='How is the app making this prediction?'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Next Steps'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
